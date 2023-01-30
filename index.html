@@ -1,40 +1,448 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+
+			<section data-auto-animate data-transition="convex-in concave-out">
+				<h2>mvc</h2>
+				<div class="r-hstack justify-center">
+					<div data-id="box1" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">
+					</div>
+					<div data-id="box2" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">
+					</div>
+					<div data-id="box3" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;">
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate data-transition="convex-in concave-out">
+				<div class="r-hstack justify-center">
+					<div data-id="box1" data-auto-animate-delay="0"
+						style="display: flex; justify-content: center; align-items: center ;background: red; width: 200px; height: 200px; margin: 10px; border-radius: 50%;">
+						<h1>M</h1>
+					</div>
+					<div data-id="box2" data-auto-animate-delay="0.1"
+						style="display: flex; justify-content: center; align-items: center; background: red; width: 200px; height: 200px; margin: 10px; border-radius: 50%;">
+						<h1>V</h1>
+					</div>
+					<div data-id="box3" data-auto-animate-delay="0.2"
+						style="display: flex; justify-content: center; align-items: center; background: red; width: 200px; height: 200px; margin: 10px; border-radius: 50%;">
+						<h1>C</h1>
+					</div>
+				</div>
+				<h2 style="margin-top: 20px;">what is?</h2>
+			</section>
+
+
+
+			<section data-transition="convex-in concave-out">
+				<img src="./assets/img/Trygve_Reenskaug_(2010).jpg " alt="" sizes="">
+
+				<ul>
+					<li class="fragment">Trygve Reenskaug created MVC while working as a visiting scientist at the Xerox in 1979.
+					</li>
+					<li class="fragment">He wanted a pattern that could be used to structure any program where users interact with
+						a large data set.</li>
+					<li class="fragment">His design initially had four parts: Model, View, Thing, and Editor.But after discussing  with the other developers,  pattern took the form: Model, View, and Controller.</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<h3>What is the MVC Model?</h3>
+				<ul>
+					<li class="fragment">A static HTML page cannot respond to user actions. Two-way interaction requires dynamic
+						web pages. MVC is the key to understanding dynamic web application development.
+					</li>
+					<li class="fragment">“M” “V” “C” stands for “MODEL” “VIEW” “CONTROLLER” It's a way of organizing code that
+						separates blocks for different tasks.
+					</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<h3>How it works?</h3>
+				<img style="max-width: 50%" src="./assets/img/MVC_model.png" alt="">
+				<ul>
+					<li class="fragment">The user through [view] sends a request to the controller.</li>
+					<li class="fragment">The controller processes the request and update the [model].</li>
+					<li class="fragment">The [model] processes the update and sends a notify to [controller].</li>
+					<li class="fragment">The [controller] processes the notify of the [model] and displays the result on the
+						[view].</li>
+				</ul>
+			</section>
+
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/bank1.png" alt="mvc">
+				<ul>
+					<li class="fragment">The [user] wants to transfer money from one account to another account</li>
+					<li class="fragment">He communicates with a bank employee or a payment machine[view]</li>
+				</ul>
+
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/bank2.png" alt="mvc">
+				<ul>
+					<li class="fragment">Only the bank's internal structure[model] can to transfer money</li>
+					<li class="fragment">Bank employee or a payment machine don't know anything about the bank's internals.</li>
+				</ul>
+
+			</section>
+
+			<section data-transition="convex-in concave-out">
+
+				<img style="max-width: 65%" src="./assets/img/bank3.png" alt="mvc">
+				<ul>
+					<li class="fragment">Controllers accept commands from the user, process them and pass the necessary
+						instructions to the model.</li>
+					<li class="fragment">Only the controller knows how to handle the client's request. How much money to send, the
+						method of sending and gives the necessary commands to the internal device of the bank</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<h2>Let's write the MSV program for the coffee machine</h2>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/coffee-machine.jpg" alt="mvc">
+				<ul>
+					<li class="fragment">The coffee machine has two states: on and off.</li>
+					<li class="fragment">There are also two buttons to select the type of coffee</li>
+				</ul>
+
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<h2>Model</h2>
+				<pre><code data-trim data-noescape data-line-numbers="1-4" class="cpp"><script type="text/template">
+					const coffeeMachineModel = {
+						isOn: false,
+						coffeeType: "",
+					};
+					
+					
+					const coffeeMachineController = {
+						toggle() {
+							coffeeMachineModel.isOn = !coffeeMachineModel.isOn;
+						},
+					
+						selectCoffeeType(e) {
+							const buttonName = e.target.name;
+							const buttonCoffeeTypes = {
+								espresso: "espresso",
+								cappuccino: "cappuccino",
+							};
+							const preferredCoffeeType = buttonCoffeeTypes[buttonName];
+							coffeeMachineModel.coffeeType = preferredCoffeeType;
+						},
+					};
+
+					const coffeeMachineView = {
+						redraw() {
+							const { isOn, coffeeType } = coffeeMachineModel;
+							const coffeeMachine = document.querySelector(".coffee-machine");
+							const coffeeMachinePower = document.querySelector(`[name="power"]`);
+							coffeeMachine.classList.remove("coffeeType-", "coffeeType-espresso", "coffeeType-cappuccino");
+							coffeeMachine.classList.add(`coffeeType-${coffeeType}`);
+							if (isOn) {
+								coffeeMachine.classList.add("is-on");
+								coffeeMachinePower.classList.add("on");
+							} else {
+								coffeeMachine.classList.remove("is-on");
+								coffeeMachinePower.classList.remove("on");
+								coffeeMachine.classList.remove("coffeeType-espresso", "coffeeType-cappuccino");
+							}
+						},
+						initEvents() {
+							const powerButton = document.querySelector(`[name="power"]`);
+							powerButton.addEventListener("click", () => {
+								coffeeMachineController.toggle();
+								coffeeMachineView.redraw();
+							});
+							const espressoButton = document.querySelector(`[name="espresso"]`);
+							espressoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+							const cappuccinoButton = document.querySelector(`[name="cappuccino"]`);
+							cappuccinoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+						},
+					};
+					
+					coffeeMachineView.initEvents();
+					</script></code></pre>
+			</section>
+			<section data-transition="convex-in concave-out">
+				<h2>Controller</h2>
+				<pre><code data-trim data-noescape data-line-numbers="7-21" class="cpp"><script type="text/template">
+					const coffeeMachineModel = {
+						isOn: false,
+						coffeeType: "",
+					};
+					
+					
+					const coffeeMachineController = {
+						toggle() {
+							coffeeMachineModel.isOn = !coffeeMachineModel.isOn;
+						},
+					
+						selectCoffeeType(e) {
+							const buttonName = e.target.name;
+							const buttonCoffeeTypes = {
+								espresso: "espresso",
+								cappuccino: "cappuccino",
+							};
+							const preferredCoffeeType = buttonCoffeeTypes[buttonName];
+							coffeeMachineModel.coffeeType = preferredCoffeeType;
+						},
+					};
+
+					const coffeeMachineView = {
+						redraw() {
+							const { isOn, coffeeType } = coffeeMachineModel;
+							const coffeeMachine = document.querySelector(".coffee-machine");
+							const coffeeMachinePower = document.querySelector(`[name="power"]`);
+							coffeeMachine.classList.remove("coffeeType-", "coffeeType-espresso", "coffeeType-cappuccino");
+							coffeeMachine.classList.add(`coffeeType-${coffeeType}`);
+							if (isOn) {
+								coffeeMachine.classList.add("is-on");
+								coffeeMachinePower.classList.add("on");
+							} else {
+								coffeeMachine.classList.remove("is-on");
+								coffeeMachinePower.classList.remove("on");
+								coffeeMachine.classList.remove("coffeeType-espresso", "coffeeType-cappuccino");
+							}
+						},
+						initEvents() {
+							const powerButton = document.querySelector(`[name="power"]`);
+							powerButton.addEventListener("click", () => {
+								coffeeMachineController.toggle();
+								coffeeMachineView.redraw();
+							});
+							const espressoButton = document.querySelector(`[name="espresso"]`);
+							espressoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+							const cappuccinoButton = document.querySelector(`[name="cappuccino"]`);
+							cappuccinoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+						},
+					};
+					
+					coffeeMachineView.initEvents();
+					</script></code></pre>
+			</section>
+			<section data-transition="convex-in concave-out">
+				<h2>View</h2>
+				<pre><code data-trim data-noescape data-line-numbers="23-38" class="cpp"><script type="text/template">
+					const coffeeMachineModel = {
+						isOn: false,
+						coffeeType: "",
+					};
+					
+					
+					const coffeeMachineController = {
+						toggle() {
+							coffeeMachineModel.isOn = !coffeeMachineModel.isOn;
+						},
+					
+						selectCoffeeType(e) {
+							const buttonName = e.target.name;
+							const buttonCoffeeTypes = {
+								espresso: "espresso",
+								cappuccino: "cappuccino",
+							};
+							const preferredCoffeeType = buttonCoffeeTypes[buttonName];
+							coffeeMachineModel.coffeeType = preferredCoffeeType;
+						},
+					};
+
+					const coffeeMachineView = {
+						redraw() {
+							const { isOn, coffeeType } = coffeeMachineModel;
+							const coffeeMachine = document.querySelector(".coffee-machine");
+							const coffeeMachinePower = document.querySelector(`[name="power"]`);
+							coffeeMachine.classList.remove("coffeeType-", "coffeeType-espresso", "coffeeType-cappuccino");
+							coffeeMachine.classList.add(`coffeeType-${coffeeType}`);
+							if (isOn) {
+								coffeeMachine.classList.add("is-on");
+								coffeeMachinePower.classList.add("on");
+							} else {
+								coffeeMachine.classList.remove("is-on");
+								coffeeMachinePower.classList.remove("on");
+								coffeeMachine.classList.remove("coffeeType-espresso", "coffeeType-cappuccino");
+							}
+						},
+						initEvents() {
+							const powerButton = document.querySelector(`[name="power"]`);
+							powerButton.addEventListener("click", () => {
+								coffeeMachineController.toggle();
+								coffeeMachineView.redraw();
+							});
+							const espressoButton = document.querySelector(`[name="espresso"]`);
+							espressoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+							const cappuccinoButton = document.querySelector(`[name="cappuccino"]`);
+							cappuccinoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+						},
+					};
+					
+					coffeeMachineView.initEvents();
+					</script></code></pre>
+			</section>
+			<section data-transition="convex-in concave-out">
+				<h2>View</h2>
+				<pre><code data-trim data-noescape data-line-numbers="39-56" class="cpp"><script type="text/template">
+					const coffeeMachineModel = {
+						isOn: false,
+						coffeeType: "",
+					};
+					
+					
+					const coffeeMachineController = {
+						toggle() {
+							coffeeMachineModel.isOn = !coffeeMachineModel.isOn;
+						},
+					
+						selectCoffeeType(e) {
+							const buttonName = e.target.name;
+							const buttonCoffeeTypes = {
+								espresso: "espresso",
+								cappuccino: "cappuccino",
+							};
+							const preferredCoffeeType = buttonCoffeeTypes[buttonName];
+							coffeeMachineModel.coffeeType = preferredCoffeeType;
+						},
+					};
+
+					const coffeeMachineView = {
+						redraw() {
+							const { isOn, coffeeType } = coffeeMachineModel;
+							const coffeeMachine = document.querySelector(".coffee-machine");
+							const coffeeMachinePower = document.querySelector(`[name="power"]`);
+							coffeeMachine.classList.remove("coffeeType-", "coffeeType-espresso", "coffeeType-cappuccino");
+							coffeeMachine.classList.add(`coffeeType-${coffeeType}`);
+							if (isOn) {
+								coffeeMachine.classList.add("is-on");
+								coffeeMachinePower.classList.add("on");
+							} else {
+								coffeeMachine.classList.remove("is-on");
+								coffeeMachinePower.classList.remove("on");
+								coffeeMachine.classList.remove("coffeeType-espresso", "coffeeType-cappuccino");
+							}
+						},
+						initEvents() {
+							const powerButton = document.querySelector(`[name="power"]`);
+							powerButton.addEventListener("click", () => {
+								coffeeMachineController.toggle();
+								coffeeMachineView.redraw();
+							});
+							const espressoButton = document.querySelector(`[name="espresso"]`);
+							espressoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+							const cappuccinoButton = document.querySelector(`[name="cappuccino"]`);
+							cappuccinoButton.addEventListener("click", (e) => {
+								coffeeMachineController.selectCoffeeType(e);
+								coffeeMachineView.redraw();
+							});
+						},
+					};
+					
+					coffeeMachineView.initEvents();
+					</script></code></pre>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<h2>coffee machine app</h2>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/prog1.png" alt="mvc">
+				<ul>
+					<li class="fragment">The coffee machine is switched off, the type of coffee is not selected</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/prog2.png" alt="mvc">
+				<ul>
+					<li class="fragment">The coffee machine is switched off, the type of coffee is not selected</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/prog3.png" alt="mvc">
+				<ul>
+					<li class="fragment">The coffee machine is switched off, the type of coffee - espresso</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<img style="max-width: 65%" src="./assets/img/prog4.png" alt="mvc">
+				<ul>
+					<li class="fragment">The coffee machine is switched off, the type of coffee - cappuccino</li>
+				</ul>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<pre>
+					<a href="https://github.com/PavelPoleshchuk/coffee-machine/tree/main">https://github.com/PavelPoleshchuk/coffee-machine/tree/main</a>
+				</pre>
+			</section>
+
+			<section data-transition="convex-in concave-out">
+				<h2>the end</h2>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
